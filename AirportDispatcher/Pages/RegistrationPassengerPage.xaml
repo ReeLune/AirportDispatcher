@@ -8,13 +8,16 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RegistrationPassengerPage">
 
-    <Grid Background="White">
-        <ListView x:Name="AirlineListView" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15">
+    <Grid Background="#d1d3d2">
+        <ListView x:Name="AirlineListView" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border>
+                    <Border MinWidth="650" Margin="15" Background="White" HorizontalAlignment="Left" Padding="15" MaxWidth="850" CornerRadius="15">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="1"/>
+                        </Border.Effect>
                         <Grid>
-                            <UniformGrid Columns="2">
+                            <UniformGrid Columns="2" Width="450">
                                 <TextBlock Text="Номер рейса " Style="{StaticResource RegularText}"/>
                                 <TextBlock Text="{Binding Number_Flight}" Style="{StaticResource RegularText}"/>
                                 <TextBlock Text="Авиакомпания " Style="{StaticResource RegularText}"/>
