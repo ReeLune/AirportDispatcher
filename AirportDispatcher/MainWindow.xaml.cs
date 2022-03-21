@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AirportDispatcher.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,23 @@ namespace AirportDispatcher
         public MainWindow()
         {
             InitializeComponent();
+            NavigatedFrame.Navigate(new MainPage());
+        }
+
+        private void MainFrameNavigated(object sender, NavigationEventArgs e)
+        {
+
+        }
+
+
+        private void RegAirlineTextBlockMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.NavigatedFrame.Navigate(new RegistrationAirlinePage());
+        }
+
+        private void RegPassengerTextBlockMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }
