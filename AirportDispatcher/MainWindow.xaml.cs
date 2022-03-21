@@ -40,7 +40,7 @@ namespace AirportDispatcher
 
         private void RegPassengerTextBlockMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            this.NavigatedFrame.Navigate(new RegistrationPassengerPage());
         }
     }
 }

@@ -5,22 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AirportDispatcher"
         mc:Ignorable="d"
-        Title="Диспетчер Аэропорта" Height="450" Width="800">
+        Title="Диспетчер Аэропорта" Height="573" Width="705.5">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="229*"/>
+            <ColumnDefinition Width="470*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Grid>
+        <Grid Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <UniformGrid Columns="3" Background="{StaticResource DodgerBlue}">
                 <Image/>
-                <TextBlock Text="Название компании" Style="{StaticResource Title}"/>
+                <TextBlock Text="Диспетчерская" Style="{StaticResource Title}"/>
                 <StackPanel>
-                    
+
                 </StackPanel>
             </UniformGrid>
             <UniformGrid Columns="2" Background="{StaticResource DeepBlue}" Grid.Row="1">
@@ -28,6 +32,6 @@
                 <TextBlock Style="{StaticResource Menu}" Text="Регистрация пассажира на рейс" MouseLeftButtonDown="RegPassengerTextBlockMouseLeftButtonDown"/>
             </UniformGrid>
         </Grid>
-        <Frame x:Name="NavigatedFrame" Grid.Row="1" NavigationUIVisibility="Hidden" Navigated="MainFrameNavigated" />
+        <Frame x:Name="NavigatedFrame" Grid.Row="1" NavigationUIVisibility="Hidden" Navigated="MainFrameNavigated" Grid.ColumnSpan="2" />
     </Grid>
 </Window>
