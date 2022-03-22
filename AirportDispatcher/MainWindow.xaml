@@ -28,7 +28,7 @@
                 </StackPanel>
             </UniformGrid>
             <UniformGrid Columns="2" Background="{StaticResource DeepBlue}" Grid.Row="1">
-                <TextBlock Style="{StaticResource Menu}" Text="Регистрация на авиарейс" MouseLeftButtonDown="RegAirlineTextBlockMouseLeftButtonDown"/>
+                <TextBlock Style="{StaticResource Menu}" Text="Регистрация авиарейса" MouseLeftButtonDown="RegAirlineTextBlockMouseLeftButtonDown"/>
                 <TextBlock Style="{StaticResource Menu}" Text="Регистрация пассажира на рейс" MouseLeftButtonDown="RegPassengerTextBlockMouseLeftButtonDown"/>
             </UniformGrid>
         </Grid>

@@ -10,12 +10,31 @@
       Title="RegistrationAirlinePage">
 
     <Grid Background="#d1d3d2">
-        <Border MinWidth="550" Margin="15" Background="White" VerticalAlignment="Center" Padding="15" MaxWidth="850" CornerRadius="15">
+        <Border MinWidth="650" Margin="15" Background="White" VerticalAlignment="Center" Padding="15" MaxWidth="1000" CornerRadius="15">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="1"/>
             </Border.Effect>
             <StackPanel>
-                <Button HorizontalAlignment="Center" Content="Кнопка" Width="200" Style="{StaticResource MaterialDesignFlatButton}"/>
+                <UniformGrid Columns="2">
+                    <TextBlock Text="Номер полета" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                    <TextBox materialDesign:HintAssist.Hint="Введите номер полета" x:Name="IndexFlightTextBox" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBlock Text="Название авиакомпании" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                    <ComboBox x:Name="AirlineComboBox" Style="{StaticResource MaterialDesignComboBox}"/>
+                    <TextBlock Text="Дата и время отправления" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <DatePicker Style="{StaticResource MaterialDesignFilledDatePicker}" />
+                        <materialDesign:TimePicker Style="{StaticResource MaterialDesignFilledTimePicker}"/>
+                    </StackPanel>
+                    <TextBlock Text="Всего мест в самолёте" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                    <TextBox materialDesign:HintAssist.Hint="Введите количество всех мест в самолете" x:Name="CountPlaceAllTextBox" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBlock Text="Свободных мест" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                    <TextBox materialDesign:HintAssist.Hint="Введите количество свободных мест" x:Name="CountPlaceRemainsTextBox" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBlock Text="Аэропорт отбытия" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                    <ComboBox x:Name="AirportFromComboBox" Style="{StaticResource MaterialDesignOutlinedComboBox}"/>
+                    <TextBlock Text="Аэропорт прибытия" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                    <ComboBox x:Name="AirportToComboBox" Style="{StaticResource MaterialDesignOutlinedComboBox}"/>
+                </UniformGrid>
+                <Button Margin="5" x:Name="RegButton" Click="RegButtonClick" Content="Зарегестрировать рейс" Style="{StaticResource MaterialDesignRaisedLightButton}" />
             </StackPanel>
         </Border>
     </Grid>

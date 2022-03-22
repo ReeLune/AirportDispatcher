@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:AirportDispatcher.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="RegistrationPassengerPage">
+      Title="RegistrationPassengerPage"
+      Loaded="WindowLoaded">
 
     <Grid Background="#d1d3d2">
         <ListView x:Name="AirlineListView" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20">
@@ -18,18 +19,18 @@
                         </Border.Effect>
                         <Grid>
                             <UniformGrid Columns="2" Width="450">
-                                <TextBlock Text="Номер рейса " Style="{StaticResource RegularText}"/>
-                                <TextBlock Text="{Binding Number_Flight}" Style="{StaticResource RegularText}"/>
-                                <TextBlock Text="Авиакомпания " Style="{StaticResource RegularText}"/>
-                                <TextBlock Text="{Binding Id_Name_Airline}" Style="{StaticResource RegularText}"/>
-                                <TextBlock Text="Дата и время отправления " Style="{StaticResource RegularText}"/>
-                                <TextBlock Text="{Binding Departure_Date}" Style="{StaticResource RegularText}"/>
-                                <TextBlock Text="Оставшиеся места " Style="{StaticResource RegularText}"/>
-                                <TextBlock Text="{Binding Count_Place_Remains}" Style="{StaticResource RegularText}"/>
-                                <TextBlock Text="Откуда " Style="{StaticResource RegularText}"/>
-                                <TextBlock Text="{Binding Airport_From}" Style="{StaticResource RegularText}"/>
-                                <TextBlock Text="Куда  " Style="{StaticResource RegularText}"/>
-                                <TextBlock Text="{Binding Airport_To}" Style="{StaticResource RegularText}"/>
+                                <TextBlock Text="Номер рейса " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="{Binding Number_Flight}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="Авиакомпания " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="{Binding Id_Name_Airline}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="Дата и время отправления " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="{Binding Departure_Date}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="Оставшиеся места " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="{Binding Count_Place_Remains}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="Откуда " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="{Binding Airport_From}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="Куда  " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="{Binding Airport_To}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                             </UniformGrid>
                         </Grid>
                     </Border>
