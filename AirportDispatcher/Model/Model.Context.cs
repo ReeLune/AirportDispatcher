@@ -13,10 +13,10 @@ namespace AirportDispatcher.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AirportEntities : DbContext
+    public partial class AirportDispatcherEntities : DbContext
     {
-        public AirportEntities()
-            : base("name=AirportEntities")
+        public AirportDispatcherEntities()
+            : base("name=AirportDispatcherEntities")
         {
         }
     
@@ -26,11 +26,11 @@ namespace AirportDispatcher.Model
         }
     
         public virtual DbSet<Airline> Airline { get; set; }
-        public virtual DbSet<Airport_Name> Airport_Name { get; set; }
+        public virtual DbSet<AirportFrom> AirportFrom { get; set; }
+        public virtual DbSet<AirportTo> AirportTo { get; set; }
         public virtual DbSet<Flight> Flight { get; set; }
         public virtual DbSet<Passengers> Passengers { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Ticket> Ticket { get; set; }
-        public virtual DbSet<Countries> Countries { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }

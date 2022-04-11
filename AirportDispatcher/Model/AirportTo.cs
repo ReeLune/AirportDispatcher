@@ -12,21 +12,18 @@ namespace AirportDispatcher.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Airport_Name
+    public partial class AirportTo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Airport_Name()
+        public AirportTo()
         {
             this.Flight = new HashSet<Flight>();
-            this.Flight1 = new HashSet<Flight>();
         }
     
-        public int Id_Airport { get; set; }
-        public string Airport_Name1 { get; set; }
+        public int IdAirportTo { get; set; }
+        public string AirportNameTo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Flight> Flight { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Flight> Flight1 { get; set; }
     }
 }

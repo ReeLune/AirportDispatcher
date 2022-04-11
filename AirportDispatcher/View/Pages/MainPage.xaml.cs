@@ -24,5 +24,15 @@ namespace AirportDispatcher.Pages
         {
             InitializeComponent();
         }
+
+        private void RegAirButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new RegistrationAirlinePage());
+        }
+
+        private void RegPassButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new RegistrationPassengerPage());
+        }
     }
 }

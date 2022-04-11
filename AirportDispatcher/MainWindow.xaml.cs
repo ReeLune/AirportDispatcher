@@ -1,4 +1,5 @@
 ﻿using AirportDispatcher.Pages;
+using AirportDispatcher.View.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,26 +25,30 @@ namespace AirportDispatcher
         public MainWindow()
         {
             InitializeComponent();
-            NavigatedFrame.Navigate(new MainPage());
+            NavigatedFrame.Navigate(new AuthPage());
+            
         }
 
         private void MainFrameNavigated(object sender, NavigationEventArgs e)
         {
 
+            var activePage = e.Content;
+            if (activePage is AuthPage || activePage is MainPage)
+            {
+                BackButton.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                BackButton.Visibility = Visibility.Visible;
+            }
         }
 
-
-        private void RegAirlineTextBlockMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void BackButtonClick(object sender, RoutedEventArgs e)
         {
-            this.NavigatedFrame.Navigate(new RegistrationAirlinePage());
+            if (NavigatedFrame.CanGoBack)
+            {
+                NavigatedFrame.GoBack();
+            }
         }
-
-        private void RegPassengerTextBlockMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            this.NavigatedFrame.Navigate(new RegistrationPassengerPage());
-        }
-
-
-        
     }
 }

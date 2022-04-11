@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportDispatcher", "AirportDispatcher\AirportDispatcher.csproj", "{7ECDB431-0104-4C89-B0F6-248053903001}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportDispatcherLibrary", "AirportDispatcherLibrary\AirportDispatcherLibrary.csproj", "{0F03662F-6C2F-499F-B6BB-17F92B5F597C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportDispatcherLibraryTests", "AirportDispatcherLibraryTests\AirportDispatcherLibraryTests.csproj", "{042E27C2-4513-479E-A15C-D1974429E91E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{7ECDB431-0104-4C89-B0F6-248053903001}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ECDB431-0104-4C89-B0F6-248053903001}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ECDB431-0104-4C89-B0F6-248053903001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F03662F-6C2F-499F-B6BB-17F92B5F597C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F03662F-6C2F-499F-B6BB-17F92B5F597C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F03662F-6C2F-499F-B6BB-17F92B5F597C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F03662F-6C2F-499F-B6BB-17F92B5F597C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{042E27C2-4513-479E-A15C-D1974429E91E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{042E27C2-4513-479E-A15C-D1974429E91E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{042E27C2-4513-479E-A15C-D1974429E91E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{042E27C2-4513-479E-A15C-D1974429E91E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

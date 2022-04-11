@@ -12,9 +12,18 @@ namespace AirportDispatcher.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Countries
+    public partial class AirportFrom
     {
-        public string CountryIndex { get; set; }
-        public string CountryName { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public AirportFrom()
+        {
+            this.Flight = new HashSet<Flight>();
+        }
+    
+        public int IdAirportFrom { get; set; }
+        public string AirportNameFrom { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Flight> Flight { get; set; }
     }
 }

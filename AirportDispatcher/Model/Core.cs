@@ -8,6 +8,6 @@ namespace AirportDispatcher.Model
 {
     class Core
     {
-        public AirportEntities context = new AirportEntities();
+        public AirportDispatcherEntities context = new AirportDispatcherEntities();
     }
 }

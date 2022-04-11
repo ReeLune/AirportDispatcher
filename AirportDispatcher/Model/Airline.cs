@@ -20,8 +20,9 @@ namespace AirportDispatcher.Model
             this.Flight = new HashSet<Flight>();
         }
     
-        public int Id_Airline { get; set; }
-        public string Airline_Name { get; set; }
+        public int IdAirline { get; set; }
+        public string AirlineName { get; set; }
+        public string AirlineCode { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Flight> Flight { get; set; }

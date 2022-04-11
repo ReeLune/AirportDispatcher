@@ -14,9 +14,9 @@ namespace AirportDispatcher.Model
     
     public partial class Ticket
     {
-        public string Number_Booking { get; set; }
-        public string Number_Passenger_Passport { get; set; }
-        public string Number_Flight_Ticket { get; set; }
+        public string NumberBooking { get; set; }
+        public string NumberPassengerPassport { get; set; }
+        public string NumberFlightTicket { get; set; }
     
         public virtual Flight Flight { get; set; }
         public virtual Passengers Passengers { get; set; }

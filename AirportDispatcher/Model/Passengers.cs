@@ -20,11 +20,11 @@ namespace AirportDispatcher.Model
             this.Ticket = new HashSet<Ticket>();
         }
     
-        public string Number_Passport { get; set; }
-        public string Place_Given { get; set; }
-        public System.DateTime Date_Given { get; set; }
-        public string Full_Name { get; set; }
-        public System.DateTime Birth_Day { get; set; }
+        public string NumberPassport { get; set; }
+        public string PlaceGiven { get; set; }
+        public System.DateTime DateGiven { get; set; }
+        public string FullName { get; set; }
+        public System.DateTime Birthday { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ticket> Ticket { get; set; }

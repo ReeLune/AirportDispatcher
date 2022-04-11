@@ -10,32 +10,40 @@
       Loaded="WindowLoaded">
 
     <Grid Background="#d1d3d2">
-        <ListView x:Name="AirlineListView" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="AirlineListView" Margin="20" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border MinWidth="650" Margin="15" Background="White" HorizontalAlignment="Left" Padding="15" MaxWidth="850" CornerRadius="15">
+                    <Border Margin="15" Background="White" Padding="15" CornerRadius="15">
                         <Border.Effect>
                             <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="1"/>
                         </Border.Effect>
                         <Grid>
                             <UniformGrid Columns="2" Width="450">
                                 <TextBlock Text="Номер рейса " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
-                                <TextBlock Text="{Binding Number_Flight}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="{Binding NumberFlingt}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="Авиакомпания " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
-                                <TextBlock Text="{Binding Id_Name_Airline}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="{Binding Airline}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="Дата и время отправления " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
-                                <TextBlock Text="{Binding Departure_Date}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="{Binding DepartureDate}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="Оставшиеся места " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
-                                <TextBlock Text="{Binding Count_Place_Remains}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="{Binding RemainPlace}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="Откуда " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
-                                <TextBlock Text="{Binding Airport_From}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="{Binding AirportFName}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="Куда  " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
-                                <TextBlock Text="{Binding Airport_To}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="{Binding AirportTName}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                             </UniformGrid>
                         </Grid>
                     </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel HorizontalAlignment="Center"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
         </ListView>
     </Grid>
 </Page>

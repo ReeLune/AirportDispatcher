@@ -20,17 +20,17 @@ namespace AirportDispatcher.Model
             this.Ticket = new HashSet<Ticket>();
         }
     
-        public string Number_Flight { get; set; }
-        public int Id_Name_Airline { get; set; }
-        public System.DateTime Departure_Date { get; set; }
-        public int Count_Place_All { get; set; }
-        public int Count_Place_Remains { get; set; }
-        public int Airport_From { get; set; }
-        public int Airport_To { get; set; }
+        public string NumberFlight { get; set; }
+        public int IdNameAirline { get; set; }
+        public System.DateTime DepartureDate { get; set; }
+        public int CountPlaceAll { get; set; }
+        public int CountPlaceRemains { get; set; }
+        public int AirportFrom { get; set; }
+        public int AirportTo { get; set; }
     
         public virtual Airline Airline { get; set; }
-        public virtual Airport_Name Airport_Name { get; set; }
-        public virtual Airport_Name Airport_Name1 { get; set; }
+        public virtual AirportFrom AirportFrom1 { get; set; }
+        public virtual AirportTo AirportTo1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ticket> Ticket { get; set; }
     }
