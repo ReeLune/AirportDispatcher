@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:AirportDispatcher"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        
+        <!--Библиотека стилей-->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
@@ -16,6 +18,7 @@
             <SolidColorBrush x:Key="DeepBlue" Color="DeepSkyBlue"/>
             <SolidColorBrush x:Key="DodgerBlue" Color="DodgerBlue" />
             <SolidColorBrush x:Key="AzureBlue" Color="#007fff"/>
+            
             <!--Стиль для заголовка-->
             <Style x:Key="Title" TargetType="TextBlock">
                 <Setter Property="FontFamily" Value="Impact"/>
@@ -24,6 +27,7 @@
                 <Setter Property="VerticalAlignment" Value="Center"/>
                 <Setter Property="Foreground" Value="White"/>
             </Style>
+            
             <!--Стиль для текста меню-->
             <Style x:Key="Menu" TargetType="TextBlock" >
                 <Setter Property="FontFamily" Value="Impact"/>
@@ -32,15 +36,8 @@
                 <Setter Property="VerticalAlignment" Value="Center"/>
                 <Setter Property="Foreground" Value="LightCyan"/>
             </Style>
-            <!--Стиль для текста пассажиров-->
-            <Style x:Key="RegularText" TargetType="TextBlock">
-                <Setter Property="FontFamily" Value="Impact"/>
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="HorizontalAlignment" Value="Left"/>
-                <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="Foreground" Value="{StaticResource AzureBlue}"/>
-            </Style>
-            
+
+            <!--Стиль для кнопки-->
             <Style x:Key="ButtonText" TargetType="Button">
                 <Setter Property="FontSize" Value="18"/>
             </Style>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AirportDispatcher.View.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,7 +33,12 @@ namespace AirportDispatcher.Pages
 
         private void RegPassButtonClick(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new RegistrationPassengerPage());
+            this.NavigationService.Navigate(new RegistrationOnFlightPage());
+        }
+
+        private void ViewPassButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AllPassengersView());
         }
     }
 }

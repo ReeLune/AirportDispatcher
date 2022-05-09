@@ -21,19 +21,21 @@
                             <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="1"/>
                         </Border.Effect>
                         <Grid>
-                            <UniformGrid Columns="2" Width="450">
+                            <UniformGrid Columns="2" Width="455">
                                 <TextBlock Text="Номер рейса " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="{Binding NumberFlingt}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="Авиакомпания " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="{Binding Airline}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="Дата и время отправления " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
-                                <TextBlock Text="{Binding DepartureDate}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <TextBlock Text="{Binding DepartureDate,StringFormat= dd/MM/yyyy HH:mm}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="Оставшиеся места " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="{Binding RemainPlace}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="Откуда " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="{Binding AirportFName}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="Куда  " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="{Binding AirportTName}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <Button Content="Добавить пассажира" x:Name="AddPassengerButton" Click="AddPassengerButtonClick"/>
+                                <Button Content="Удалить" x:Name="DeleteButton" Click="DeleteButtonClick" Width="150"/>
                             </UniformGrid>
                         </Grid>
                     </Border>

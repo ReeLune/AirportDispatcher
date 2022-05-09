@@ -84,6 +84,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\Pages\AllPassengersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pages\AuthPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -93,6 +97,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pages\RegistrationAirlinePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\RegistrationOnFlightPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -141,6 +149,10 @@
     </Compile>
     <Compile Include="ViewModel\AuthUsers.cs" />
     <Compile Include="ViewModel\RegFlights.cs" />
+    <Compile Include="ViewModel\RegPassengers.cs" />
+    <Compile Include="View\Pages\AllPassengersView.xaml.cs">
+      <DependentUpon>AllPassengersView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
     </Compile>
@@ -149,6 +161,9 @@
     </Compile>
     <Compile Include="View\Pages\RegistrationAirlinePage.xaml.cs">
       <DependentUpon>RegistrationAirlinePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\RegistrationOnFlightPage.xaml.cs">
+      <DependentUpon>RegistrationOnFlightPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pages\RegistrationPassengerPage.xaml.cs">
       <DependentUpon>RegistrationPassengerPage.xaml</DependentUpon>

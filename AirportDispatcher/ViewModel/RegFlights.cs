@@ -16,18 +16,15 @@ namespace AirportDispatcher.ViewModel
             Core db = new Core();
             CheckStringClass check = new CheckStringClass();
             GenerationClass gen = new GenerationClass();
-            try
+            
+            if (check.FlightNumberPlacesAll(allPlaces, remainPlaces) == true)
             {
-
-                if (check.FlightNumberPlacesAll(allPlaces, remainPlaces) == true)
+                if (check.DateTimeFlight(dateTime) == true)
                 {
-                    if (check.DateTimeFlight(dateTime) == true)
+                    if (airline != -1 && airportFrom != -1 && airportTo != -1)
                     {
-                        if (airline != -1 && airportFrom != -1 && airportTo != -1)
+                        if (airportFrom != airportTo)
                         {
-                            if (airportFrom != airportTo)
-                            {
-
                                 string codeAirline = db.context.Airline.Where(x => x.IdAirline == airline).First().AirlineCode;
                                 int count = db.context.Flight.ToList().Count() % 1000;
                                 Flight qwery = new Flight()
@@ -40,6 +37,14 @@ namespace AirportDispatcher.ViewModel
                                     AirportFrom = airportFrom,
                                     AirportTo = airportTo
                                 };
+                                //Избежание повтора первичного ключа, если удалялись авиарейсы
+                                int ext = db.context.Flight.Where(x => x.NumberFlight == qwery.NumberFlight).ToList().Count();
+                                while (ext != 0)
+                                {
+                                    count++;
+                                    qwery.NumberFlight = gen.NumberFlightGeneration(codeAirline, count);
+                                    ext = db.context.Flight.Where(x => x.NumberFlight == qwery.NumberFlight).ToList().Count();
+                                }
                                 db.context.Flight.Add(qwery);
                                 try
                                 {
@@ -60,23 +65,20 @@ namespace AirportDispatcher.ViewModel
                                         }
                                     }
                                 }
-                            }
-                            else
-                            {
-                                throw new Exception("Пункт отбытия и прибытия совпадают!");
+                                
                             }
                         }
                         else
                         {
-                            throw new Exception("Вы не все выбрали!");
+                            throw new Exception("Пункт отбытия и прибытия совпадают!");
                         }
                     }
+                    else
+                    {
+                        throw new Exception("Вы не все выбрали!");
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+            
             return true;
         }
     }

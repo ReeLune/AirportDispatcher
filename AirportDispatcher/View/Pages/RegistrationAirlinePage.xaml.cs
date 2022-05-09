@@ -27,7 +27,6 @@ namespace AirportDispatcher.Pages
     public partial class RegistrationAirlinePage : Page
     {
         Core db = new Core();
-        //List<AirportName> arrayAirport;
         List<Airline> arrayAirline;
         List<AirportFrom> arrayAirportFrom;
         List<AirportTo> arrayAirportTo;
@@ -70,7 +69,7 @@ namespace AirportDispatcher.Pages
             int day = DateDeparture.SelectedDate.Value.Day;
             int hour = TimeDeparture.SelectedTime.Value.Hour;
             int minute = TimeDeparture.SelectedTime.Value.Minute;
-            DateTime dateTime = new DateTime(year,month,day,hour, month,0);            
+            DateTime dateTime = new DateTime(year,month,day,hour, minute,0);            
             if (AirlineComboBox.SelectedItem != null)
             {
                 idAirline = indexAirline[AirlineComboBox.SelectedIndex];
@@ -83,11 +82,18 @@ namespace AirportDispatcher.Pages
             {
                 idAirportTo = indexAirportTo[AirportToComboBox.SelectedIndex];
             }
-            if (obj.RegFlight(idAirline, idAirportFrom, idAirportTo, CountPlaceAllTextBox.Text, CountPlaceRemainsTextBox.Text, dateTime)==true)
+            try
             {
-                MessageBox.Show("Вы успешно зарегистрировали рейс");
-                this.NavigationService.Navigate(new MainPage());
-            }            
+                if (obj.RegFlight(idAirline, idAirportFrom, idAirportTo, CountPlaceAllTextBox.Text, CountPlaceRemainsTextBox.Text, dateTime) == true)
+                {
+                    MessageBox.Show("Вы успешно зарегистрировали рейс");
+                    this.NavigationService.Navigate(new MainPage());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }         
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AirportDispatcher"
         mc:Ignorable="d"
-        Title="Диспетчер Аэропорта" Height="575" Width="710">
+        Title="Диспетчер Аэропорта" Height="700" Width="1000" MinWidth="1000" MinHeight="700">
     <Grid Background="#d1d3d2">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
@@ -15,8 +15,8 @@
             <UniformGrid Columns="3" Background="{StaticResource DodgerBlue}">
                 <Image/>
                 <TextBlock Text="Диспетчерская" Style="{StaticResource Title}" />
-                <StackPanel Margin="10">
-                    <Button x:Name="BackButton" Click="BackButtonClick" Content="Назад"/>
+                <StackPanel Margin="10" HorizontalAlignment="Right">
+                    <Button x:Name="BackButton" Click="BackButtonClick" Content="Назад" Style="{StaticResource MaterialDesignFlatDarkBgButton}"/>
                 </StackPanel>
             </UniformGrid>
         </Grid>
