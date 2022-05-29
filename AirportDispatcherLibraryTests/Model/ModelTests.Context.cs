@@ -13,10 +13,10 @@ namespace AirportDispatcherLibraryTests.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AirportDispatcherEntities : DbContext
+    public partial class AirportDispatcherEntitiesTests : DbContext
     {
-        public AirportDispatcherEntities()
-            : base("name=AirportDispatcherEntities")
+        public AirportDispatcherEntitiesTests()
+            : base("name=AirportDispatcherEntitiesTests")
         {
         }
     

@@ -25,7 +25,7 @@ namespace AirportDispatcherLibrary
         {
             string correct = "1234567890";
             if (allPlaces == String.Empty || remainsPlaces == String.Empty)
-                throw new Exception("Строка не может быть пустой");
+                throw new Exception("Строки количества мест должны быть заполнены");
             if (!allPlaces.All(x => correct.Contains(x)) || !remainsPlaces.All(x => correct.Contains(x)))
                 throw new Exception("Строка содержит некорректные символы");
             int all = Convert.ToInt32(allPlaces);
@@ -45,11 +45,13 @@ namespace AirportDispatcherLibrary
         /// Дата рейса
         /// </param>
         /// <returns>
-        /// true если введено верно
-        /// false введено не верно
+        /// True если введено верно
+        /// False введено не верно
         /// </returns>
         public bool DateTimeFlight(DateTime dateTime)
         {
+            if (dateTime == null)
+                throw new Exception("Нужно выбрать дату");
             if (dateTime < DateTime.Now)
                 throw new Exception("Неверно выбранная дата");
             if (dateTime > DateTime.Today.AddYears(1))
@@ -70,7 +72,7 @@ namespace AirportDispatcherLibrary
         {
             string correct = "1234567890-";
             if (number == String.Empty)
-                throw new Exception("Вы не ввели серию и номер паспорта'");
+                throw new Exception("Вы не ввели серию и номер паспорта");
             if (!number.All(x => correct.Contains(x)))
                 throw new Exception("Строка серии и номера паспорта содержит некорректные символы");
             if (number.Length != 11)
@@ -96,30 +98,14 @@ namespace AirportDispatcherLibrary
         {
             DateTime today = DateTime.Now;
             int yearNow = today.Year;
-            int monthNow = today.Month;
-            int dayNow = today.Day;
             int year = birthday.Year;
-            int month = birthday.Month;
-            int day = birthday.Day;
-            if (month == 2 && day > 29)
-            {
-                throw new Exception("Такого числа не существует");
-            }
-            if ((month == 4 || month == 6 || month == 9 || month == 11) && day >= 31)
-            {
-                throw new Exception("Такого числа не существует");
-            }
-            if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && day > 31)
-            {
-                throw new Exception("Такого числа не существует");
-            }
             if (year > (yearNow - 14))
             {
                 throw new Exception("Вы слишком молоды");
             }
             if (year < 1903)
             {
-                throw new Exception("Вы мертвы");
+                throw new Exception("Вы нежилец");
             }
             return true;
         }
@@ -170,15 +156,26 @@ namespace AirportDispatcherLibrary
         /// </returns>
         public bool PlaceGivenCheck(string placeGiven)
         {
+            string nameOne = placeGiven;
             if (placeGiven == String.Empty)
             {
                 throw new Exception("Вы не ввели место выдачи паспорта");
             }
-            string correctSymbols = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя.- ";
+            string correctSymbols = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя.-\"\" ";
             placeGiven = placeGiven.ToLower();
             if (!placeGiven.All(x => correctSymbols.Contains(x)))
             {
                 throw new Exception("Место выдачи содержит недоступные символы");
+            }
+            if (placeGiven.EndsWith("-") || placeGiven.StartsWith("-"))
+            {
+                throw new Exception("Поле содержит знак 'дефис' в начале либо в конце");
+            }
+            placeGiven = nameOne;
+            char symbol = placeGiven[0];
+            if (Char.IsLower(symbol))
+            {
+                throw new Exception("Поле должно начинаться с заглавной буквы");
             }
             return true;
         }

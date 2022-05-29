@@ -10,10 +10,15 @@
       Loaded="WindowLoaded">
 
     <Grid Background="#d1d3d2">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <ListView x:Name="AirlineListView" Margin="20" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+            <TextBlock Text="Поиск" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+            <TextBox x:Name="SearchTextBox" TextChanged="SearchTextBoxTextChanged" Style="{StaticResource MaterialDesignTextBox}" Width="100" Height="35"/>
+        </StackPanel>
+        <ListView x:Name="AirlineListView" Margin="20" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.Row="1">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border Margin="15" Background="White" Padding="15" CornerRadius="15">
@@ -21,7 +26,7 @@
                             <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="1"/>
                         </Border.Effect>
                         <Grid>
-                            <UniformGrid Columns="2" Width="455">
+                            <UniformGrid Columns="2" Width="500">
                                 <TextBlock Text="Номер рейса " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="{Binding NumberFlingt}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="Авиакомпания " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
@@ -34,8 +39,10 @@
                                 <TextBlock Text="{Binding AirportFName}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="Куда  " Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                                 <TextBlock Text="{Binding AirportTName}" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
-                                <Button Content="Добавить пассажира" x:Name="AddPassengerButton" Click="AddPassengerButtonClick"/>
-                                <Button Content="Удалить" x:Name="DeleteButton" Click="DeleteButtonClick" Width="150"/>
+                                <Button Content="Добавить пассажира" x:Name="AddPassengerButton" Click="AddPassengerButtonClick" Width="200" Margin="5"/>
+                                <Button Content="Просмотр пассажиров" x:Name="ListPassengerButton" Click="ListPassengerButtonClick" Width="200" Margin="5"/>
+                                <TextBlock/>
+                                <Button Content="Удалить" x:Name="DeleteButton" Click="DeleteButtonClick" Width="150" Margin="5"/>
                             </UniformGrid>
                         </Grid>
                     </Border>

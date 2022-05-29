@@ -15,7 +15,7 @@ namespace AirportDispatcherLibraryTests
         /// Проверка корректности ФИО
         /// </summary>
         /// <param>
-        /// Александр Сергеевич Пушкин
+        /// Иван Иванов Иванович
         /// </param>
         /// <return>
         /// true
@@ -24,10 +24,10 @@ namespace AirportDispatcherLibraryTests
         public void FullNameCheck_RightString_True()
         {
             //Accept
-            string author = "Александр Сергеевич Пушкин";
+            string name = "Иван Иванов Иванович";
             //Act
             CheckStringClass obj = new CheckStringClass();
-            bool res = obj.FullNameCheck(author);
+            bool res = obj.FullNameCheck(name);
             //Assert
             Assert.IsTrue(res);
         }
@@ -38,74 +38,93 @@ namespace AirportDispatcherLibraryTests
         /// String.Empty
         /// </param>
         /// <return>
-        /// Expostion так как пустая строка
+        /// Исключение, так как пустая строка
         /// </return>
         [TestMethod]
-        public void FullNameCheck_StringEmpty_Expostion()
+        public void FullNameCheck_StringEmpty_Exception()
         {
             //Accept
-            string author = String.Empty;
+            string name = String.Empty;
             //Act
             CheckStringClass obj = new CheckStringClass();
             //Assert
-            Assert.ThrowsException<Exception>(() => obj.FullNameCheck(author));
+            Assert.ThrowsException<Exception>(() => obj.FullNameCheck(name));
         }
         /// <summary>
         /// Проверка корректности ФИО
         /// </summary>
         /// <param>
-        /// александр сергеевич пушкин
+        ///иван иванов иванович     
         /// </param>
         /// <return>
-        /// Expostion так как ввод со строчной буквы
+        /// Исключение, так как ввод со строчной буквы
         /// </return>
         [TestMethod]
-        public void FullNameCheck_LowerString_Expostion()
+        public void FullNameCheck_LowerString_Exception()
         {
             //Accept
-            string author = "александр сергеевич пушкин";
+            string name = "иван иванов иванович";
             //Act
             CheckStringClass obj = new CheckStringClass();
             //Assert
-            Assert.ThrowsException<Exception>(() => obj.FullNameCheck(author));
+            Assert.ThrowsException<Exception>(() => obj.FullNameCheck(name));
         }
         /// <summary>
         /// Проверка корректности ФИО
         /// </summary>
         /// <param>
-        /// Александp
+        /// Ивaн
         /// </param>
         /// <return>
-        /// Expostion так как "p" из латинского алфавита
+        /// Исключение, так как "a" из латинского алфавита
         /// </return>
         [TestMethod]
-        public void FullNameCheck_FalseString_Expostion()
+        public void FullNameCheck_FalseString_Exception()
         {
             //Accept
-            string author = "Александp";
+            string name = "Ивaн";
             //Act
             CheckStringClass obj = new CheckStringClass();
             //Assert
-            Assert.ThrowsException<Exception>(() => obj.FullNameCheck(author));
+            Assert.ThrowsException<Exception>(() => obj.FullNameCheck(name));
         }
         /// <summary>
         /// Проверка корректности ФИО
         /// </summary>
         /// <param>
-        /// -Александp
+        /// -Иван
         /// </param>
         /// <return>
-        /// Expostion так как начинается с дефис
+        /// Исключение, так как начинается с дефиса
         /// </return>
         [TestMethod]
-        public void FullNameCheck_StartDefis_Expostion()
+        public void FullNameCheck_StartDefis_Exception()
         {
             //Accept
-            string author = "-Александр";
+            string name = "-Иван Иванов Иванович";
             //Act
             CheckStringClass obj = new CheckStringClass();
             //Assert
-            Assert.ThrowsException<Exception>(() => obj.FullNameCheck(author));
+            Assert.ThrowsException<Exception>(() => obj.FullNameCheck(name));
+        }
+        /// <summary>
+        /// Проверка корректности ФИО
+        /// </summary>
+        /// <param>
+        /// -Иван
+        /// </param>
+        /// <return>
+        /// Исключение, так как заканчивается дефисом
+        /// </return>
+        [TestMethod]
+        public void FullNameCheck_EndDefis_Exception()
+        {
+            //Accept
+            string name = "Иван Иванов Иванович-";
+            //Act
+            CheckStringClass obj = new CheckStringClass();
+            //Assert
+            Assert.ThrowsException<Exception>(() => obj.FullNameCheck(name));
         }
     }
 }

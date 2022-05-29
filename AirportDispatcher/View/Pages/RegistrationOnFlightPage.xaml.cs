@@ -1,4 +1,5 @@
 ﻿using AirportDispatcher.Model;
+using AirportDispatcher.Pages;
 using AirportDispatcher.ViewModel;
 using AirportDispatcherLibrary;
 using System;
@@ -24,6 +25,7 @@ namespace AirportDispatcher.View.Pages
     /// </summary>
     public partial class RegistrationOnFlightPage : Page
     {
+        //Подключение к БД
         Core db = new Core();
         List<Passengers> arrayPassengers;
         public RegistrationOnFlightPage()
@@ -31,7 +33,9 @@ namespace AirportDispatcher.View.Pages
             InitializeComponent();
             arrayPassengers = db.context.Passengers.ToList();
         }
-
+        /// <summary>
+        /// Кнопка регистрации
+        /// </summary>
         private void RegPassButtonClick(object sender, RoutedEventArgs e)
         {
             //RegPassengers obj = new RegPassengers();
@@ -78,7 +82,8 @@ namespace AirportDispatcher.View.Pages
                                             db.context.SaveChanges();
                                             if (db.context.SaveChanges() == 0)
                                             {
-                                                MessageBox.Show("Вы успешно добавили книгу");
+                                                MessageBox.Show("Вы успешно добавили пассажира");
+                                                this.NavigationService.Navigate(new MainPage());
                                             }
                                         }
                                         catch (DbEntityValidationException ex)

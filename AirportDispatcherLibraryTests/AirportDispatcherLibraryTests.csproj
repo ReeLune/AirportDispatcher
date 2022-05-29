@@ -60,56 +60,63 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BirthdayCheckTests.cs" />
-    <Compile Include="FullNameTests.cs" />
     <Compile Include="Model\Airline.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelTests.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\AirportFrom.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelTests.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\AirportTo.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelTests.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Core.cs" />
     <Compile Include="Model\Flight.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelTests.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Model.Context.cs">
+    <Compile Include="Model\ModelTests.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.Context.tt</DependentUpon>
+      <DependentUpon>ModelTests.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Model.cs">
+    <Compile Include="Model\ModelTests.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelTests.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Model.Designer.cs">
+    <Compile Include="Model\ModelTests.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
+      <DependentUpon>ModelTests.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\Passengers.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelTests.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Ticket.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelTests.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Users.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelTests.tt</DependentUpon>
     </Compile>
-    <Compile Include="RegFlightTest.cs" />
+    <Compile Include="UsersViewModelTests.cs" />
+    <Compile Include="BirthdayCheckTests.cs" />
+    <Compile Include="DateGivenCheckTests.cs" />
+    <Compile Include="DateTimeFlight.cs" />
+    <Compile Include="FlightNumberPlacesAllTests.cs" />
+    <Compile Include="FullNameTests.cs" />
+    <Compile Include="Model\Core.cs" />
+    <Compile Include="NumberPassportCheckTests.cs" />
+    <Compile Include="PlaceGivenCheckTests.cs" />
+    <Compile Include="RegFlightTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegPassengersTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Model\Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="App.Config" />
-    <None Include="Model\Model.edmx.diagram">
-      <DependentUpon>Model.edmx</DependentUpon>
+    <EntityDeploy Include="Model\ModelTests.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelTests.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\ModelTests.edmx.diagram">
+      <DependentUpon>ModelTests.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -119,24 +126,24 @@
       <Name>AirportDispatcherLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="..\AirportDispatcher\AirportDispatcher.csproj">
-      <Project>{7ECDB431-0104-4C89-B0F6-248053903001}</Project>
+      <Project>{7ecdb431-0104-4c89-b0f6-248053903001}</Project>
       <Name>AirportDispatcher</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
-      <DependentUpon>Model.edmx</DependentUpon>
-    </Content>
-    <Content Include="Model\Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Model\ModelTests.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelTests.edmx</DependentUpon>
+      <LastGenOutput>ModelTests.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\ModelTests.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelTests.edmx</DependentUpon>
+      <LastGenOutput>ModelTests.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

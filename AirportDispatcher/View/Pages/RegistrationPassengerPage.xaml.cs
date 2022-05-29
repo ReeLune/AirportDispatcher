@@ -29,7 +29,9 @@ namespace AirportDispatcher.Pages
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Генерация для ListView
+        /// </summary>
         public void WindowLoaded(object sender, RoutedEventArgs e)
         {
             AirportDispatcherEntities obj = new AirportDispatcherEntities();
@@ -59,7 +61,9 @@ namespace AirportDispatcher.Pages
             }
         }
 
-
+        /// <summary>
+        /// Кнопка удаления
+        /// </summary>
         private void DeleteButtonClick(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
@@ -111,12 +115,50 @@ namespace AirportDispatcher.Pages
             Flights dFlight = flight.DataContext as Flights;
             Flight activeFlight = db.context.Flight.Where(x => x.NumberFlight == dFlight.NumberFlingt).First();
             Properties.Settings.Default.NumberFlight = activeFlight.NumberFlight;
-            this.NavigationService.Navigate(new RegistrationOnFlightPage());
+            this.NavigationService.Navigate(new AllPassengersViewPage());
         }
 
-        private void ResultTextBoxTextChanged(object sender, TextChangedEventArgs e)
+        private void SearchTextBoxTextChanged(object sender, TextChangedEventArgs e)
         {
+            AirlineListView.Items.Clear();
+            string search = SearchTextBox.Text;
+            search = search.ToLower();
+            AirportDispatcherEntities obj = new AirportDispatcherEntities();
+            var query =
+                from Flight in obj.Flight
+                join AirportTo in obj.AirportTo on Flight.AirportTo equals AirportTo.IdAirportTo
+                join AirportFrom in obj.AirportFrom on Flight.AirportFrom equals AirportFrom.IdAirportFrom
+                join Airline in obj.Airline on Flight.IdNameAirline equals Airline.IdAirline
+                where Flight.NumberFlight.ToLower().Contains(search) || Airline.AirlineName.ToLower().Contains(search) || Flight.DepartureDate.ToString().ToLower().Contains(search) || 
+                    Flight.CountPlaceAll.ToString().ToLower().Contains(search) || Flight.CountPlaceRemains.ToString().ToLower().Contains(search) || 
+                    AirportFrom.AirportNameFrom.ToLower().Contains(search) || AirportTo.AirportNameTo.ToLower().Contains(search)
+                select new { Flight.NumberFlight, Airline.AirlineName, Flight.DepartureDate, Flight.CountPlaceAll, Flight.CountPlaceRemains, AirportFrom.AirportNameFrom, AirportTo.AirportNameTo };
 
+            if (query.Count() != 0)
+            {
+                foreach (var item in query)
+                {
+                    Flights flight = new Flights()
+                    {
+                        NumberFlingt = item.NumberFlight,
+                        Airline = item.AirlineName,
+                        DepartureDate = item.DepartureDate,
+                        AllPlace = item.CountPlaceAll,
+                        RemainPlace = item.CountPlaceRemains,
+                        AirportFName = item.AirportNameFrom,
+                        AirportTName = item.AirportNameTo
+                    };
+                    AirlineListView.Items.Add(flight);
+                }
+            }
+        }
+
+        private void ListPassengerButtonClick(object sender, RoutedEventArgs e)
+        {
+            Button activeButton = sender as Button;
+            Flights flight = activeButton.DataContext as Flights;
+            Properties.Settings.Default.NumberFlight = flight.NumberFlingt;
+            this.NavigationService.Navigate(new AddedPassengersOnFlight());
         }
     }
     public class Flights

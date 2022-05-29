@@ -10,8 +10,9 @@
       Title="MainPage">
 
     <Grid Background="#d1d3d2">
-        <UniformGrid Columns="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="250">
-            <Button Margin="25" Height="75" x:Name="RegAirButton" Content="Регистрация авиарейста" Style="{StaticResource MaterialDesignFlatDarkBgButton}" FontSize="16" Click="RegAirButtonClick"/>
+        <UniformGrid Columns="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="250">
+            <Button Margin="25" Height="75" x:Name="RegAirButton" Content="Регистрация авиарейса" Style="{StaticResource MaterialDesignFlatDarkBgButton}" FontSize="16" Click="RegAirButtonClick"/>
+            <Button Margin="25" Height="75" x:Name="ShowAirButton" Content="Просмотр всех авиарейсов" Style="{StaticResource MaterialDesignFlatDarkBgButton}" FontSize="16" Click="ShowAirButtonClick"/>            
             <Button Margin="25" Height="75" x:Name="RegPassButton" Content="Регистрация пассажира" Style="{StaticResource MaterialDesignFlatDarkBgButton}" FontSize="16" Click="RegPassButtonClick"/>
             <Button Margin="25" Height="75" x:Name="ViewPassButton" Content="Просмотр всех пассажиров" Style="{StaticResource MaterialDesignFlatDarkBgButton}" FontSize="16" Click="ViewPassButtonClick"/>
         </UniformGrid>

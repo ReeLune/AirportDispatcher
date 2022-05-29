@@ -84,7 +84,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\Pages\AllPassengersView.xaml">
+    <Page Include="View\Pages\AddedPassengersOnFlight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\AllPassengersViewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,11 +151,15 @@
     <Compile Include="Model\Users.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\AuthUsers.cs" />
+    <Compile Include="ViewModel\UsersViewModel.cs" />
     <Compile Include="ViewModel\RegFlights.cs" />
     <Compile Include="ViewModel\RegPassengers.cs" />
-    <Compile Include="View\Pages\AllPassengersView.xaml.cs">
-      <DependentUpon>AllPassengersView.xaml</DependentUpon>
+    <Compile Include="ViewModel\Ticket.cs" />
+    <Compile Include="View\Pages\AddedPassengersOnFlight.xaml.cs">
+      <DependentUpon>AddedPassengersOnFlight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\AllPassengersViewPage.xaml.cs">
+      <DependentUpon>AllPassengersViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>

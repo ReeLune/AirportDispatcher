@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AirportDispatcher.ViewModel
 {
-    class RegPassengers
+    public class RegPassengers
     {
         public bool RegPassenger(string numberPassport, string placeGiven, DateTime dateGiven, string fullName, DateTime birthDay)
         {
@@ -60,6 +60,14 @@ namespace AirportDispatcher.ViewModel
             }
             
 
+            return true;
+        }
+        public bool DeletePassenger(string numberPassport)
+        {
+            Core db = new Core();
+            Passengers pass = db.context.Passengers.Where(x => x.NumberPassport == numberPassport).First();
+            db.context.Passengers.Remove(pass);
+            db.context.SaveChanges();
             return true;
         }
     }

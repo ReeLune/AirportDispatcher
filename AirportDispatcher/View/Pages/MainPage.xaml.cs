@@ -25,20 +25,33 @@ namespace AirportDispatcher.Pages
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Кнопка навигации на регистрацию рейса
+        /// </summary>
         private void RegAirButtonClick(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new RegistrationAirlinePage());
         }
-
+        /// <summary>
+        /// Кнопка навицагии на регистрацию на рейс
+        /// </summary>
         private void RegPassButtonClick(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new RegistrationOnFlightPage());
         }
-
+        /// <summary>
+        /// Кнопка навигации для всех пассажиров
+        /// </summary>
         private void ViewPassButtonClick(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AllPassengersView());
+            this.NavigationService.Navigate(new AllPassengersViewPage());
+        }
+        /// <summary>
+        /// Кнопка навигации на показ всех авиарейсов
+        /// </summary>
+        private void ShowAirButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new RegistrationPassengerPage());
         }
     }
 }

@@ -38,7 +38,7 @@ namespace AirportDispatcherLibraryTests
         /// today
         /// </param>
         /// <return>
-        /// Exception так как не может быть такого пользователя
+        /// Исключение, так как не может быть такого пользователя
         /// </return>
         [TestMethod]
         public void BirthdayCheck_Today_Exception()
@@ -54,10 +54,29 @@ namespace AirportDispatcherLibraryTests
         /// Проверка корректности введённого дня рождения
         /// </summary>
         /// <param>
+        /// today
+        /// </param>
+        /// <return>
+        /// Исключение, так как не может быть такого пользователя
+        /// </return>
+        [TestMethod]
+        public void BirthdayCheck_Young_Exception()
+        {
+            //Accept
+            DateTime day = DateTime.Today.AddYears(-2);
+            //Act
+            CheckStringClass obj = new CheckStringClass();
+            //Assert
+            Assert.ThrowsException<Exception>(() => obj.BirthdayCheck(day));
+        }
+        /// <summary>
+        /// Проверка корректности введённого дня рождения
+        /// </summary>
+        /// <param>
         /// 12 декабря 1900 года
         /// </param>
         /// <return>
-        /// Exception так как самый старый человек родился позже
+        /// Исключение, так как человек столько не может прожить
         /// </return>
         [TestMethod]
         public void BirthdayCheck_Year1900_Exception()

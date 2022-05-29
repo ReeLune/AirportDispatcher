@@ -21,5 +21,18 @@ namespace AirportDispatcherLibrary
 
             return number;
         }
+        public string TicketGeneration()
+        {
+            string ticket = "";
+            string alf = "QAZXSWEDCVFRTGBNHYUJMKIOLP0123456789";
+            Random x = new Random();
+            int lenght = x.Next(alf.Length);
+            for (int i = 0; i < 7; i++)
+            {
+                ticket += alf[lenght];
+                lenght = x.Next(alf.Length);
+            }
+            return ticket;
+        }
     }
 }

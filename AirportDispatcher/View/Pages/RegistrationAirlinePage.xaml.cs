@@ -26,6 +26,7 @@ namespace AirportDispatcher.Pages
     /// 
     public partial class RegistrationAirlinePage : Page
     {
+        //Подключение к БД
         Core db = new Core();
         List<Airline> arrayAirline;
         List<AirportFrom> arrayAirportFrom;
@@ -60,40 +61,57 @@ namespace AirportDispatcher.Pages
             }
         }
 
-
+        /// <summary>
+        /// Кнопка регистрации
+        /// </summary>
         private void RegButtonClick(object sender, RoutedEventArgs e)
         {
             RegFlights obj = new RegFlights();
-            int year = DateDeparture.SelectedDate.Value.Year;
-            int month = DateDeparture.SelectedDate.Value.Month;
-            int day = DateDeparture.SelectedDate.Value.Day;
-            int hour = TimeDeparture.SelectedTime.Value.Hour;
-            int minute = TimeDeparture.SelectedTime.Value.Minute;
-            DateTime dateTime = new DateTime(year,month,day,hour, minute,0);            
+            DateTime newDate = new DateTime();
+            if (DateDeparture.SelectedDate != null && TimeDeparture.SelectedTime != null)
+            {
+                int year = DateDeparture.SelectedDate.Value.Year;
+                int month = DateDeparture.SelectedDate.Value.Month;
+                int day = DateDeparture.SelectedDate.Value.Day;
+                int hour = TimeDeparture.SelectedTime.Value.Hour;
+                int minute = TimeDeparture.SelectedTime.Value.Minute;
+                newDate = new DateTime(year, month, day, hour, minute, 0);
+            }
+            else
+                MessageBox.Show("Нужно выбрать дату и время");
             if (AirlineComboBox.SelectedItem != null)
             {
                 idAirline = indexAirline[AirlineComboBox.SelectedIndex];
-            }
-            if (AirportFromComboBox.SelectedItem != null)
-            {
-                idAirportFrom = indexAirportFrom[AirportFromComboBox.SelectedIndex];
-            }
-            if (AirportToComboBox.SelectedItem != null) 
-            {
-                idAirportTo = indexAirportTo[AirportToComboBox.SelectedIndex];
-            }
-            try
-            {
-                if (obj.RegFlight(idAirline, idAirportFrom, idAirportTo, CountPlaceAllTextBox.Text, CountPlaceRemainsTextBox.Text, dateTime) == true)
+                if (AirportFromComboBox.SelectedItem != null)
                 {
-                    MessageBox.Show("Вы успешно зарегистрировали рейс");
-                    this.NavigationService.Navigate(new MainPage());
+                    idAirportFrom = indexAirportFrom[AirportFromComboBox.SelectedIndex];
+                    if (AirportToComboBox.SelectedItem != null)
+                    {
+                        idAirportTo = indexAirportTo[AirportToComboBox.SelectedIndex];
+                        try
+                        {
+                            if (obj.RegFlight(idAirline, idAirportFrom, idAirportTo, CountPlaceAllTextBox.Text, CountPlaceRemainsTextBox.Text, newDate) == true)
+                            {
+                                MessageBox.Show("Вы успешно зарегистрировали рейс");
+                                this.NavigationService.Navigate(new MainPage());
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    else
+                        MessageBox.Show("Вы не выбрали Аэропорт прибытия");
                 }
+                else
+                    MessageBox.Show("Вы не выбрали Аэропорт отправления");
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }         
+            else
+                MessageBox.Show("Вы не выбрали Авиакомпанию");
+            
+            
+                    
         }
     }
 }
