@@ -12,7 +12,7 @@ namespace AirportDispatcherLibraryTests
     public class UsersViewModelTests
     {
         /// <summary>
-        /// Проверка метода на наличие пользователей
+        /// Проверка на наличие пользователей
         /// </summary>
         /// <param>
         /// String.Epmty x2
@@ -32,7 +32,7 @@ namespace AirportDispatcherLibraryTests
             Assert.ThrowsException<Exception>(() => obj.AuthUser(login, password));
         }
         /// <summary>
-        /// Проверка метода на наличие пользователей
+        /// Проверка на наличие пользователей
         /// </summary>
         /// <param>
         /// "ReeLune", "pass123"
@@ -53,7 +53,7 @@ namespace AirportDispatcherLibraryTests
             Assert.IsTrue(res);
         }
         /// <summary>
-        /// Проверка метода на наличие пользователей
+        /// Проверка на наличие пользователей
         /// </summary>
         /// <param>
         /// "ReeLun", "pass123"
@@ -73,7 +73,7 @@ namespace AirportDispatcherLibraryTests
             Assert.ThrowsException<Exception>(() => obj.AuthUser(login, password));
         }
         /// <summary>
-        /// Проверка метода на наличие пользователей
+        /// Проверка на наличие пользователей
         /// </summary>
         /// <param>
         /// "ReeLune", "pass1233"

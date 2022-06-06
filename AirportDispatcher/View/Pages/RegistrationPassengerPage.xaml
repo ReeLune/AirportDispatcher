@@ -14,10 +14,12 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
-            <TextBlock Text="Поиск" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
-            <TextBox x:Name="SearchTextBox" TextChanged="SearchTextBoxTextChanged" Style="{StaticResource MaterialDesignTextBox}" Width="100" Height="35"/>
-        </StackPanel>
+        <Viewbox HorizontalAlignment="Right" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+                <TextBlock Text="Поиск" Style="{StaticResource MaterialDesignBody1TextBlock}" Margin="2" FontSize="16"/>
+                <TextBox x:Name="SearchTextBox" TextChanged="SearchTextBoxTextChanged" Style="{StaticResource MaterialDesignTextBox}" Width="100" Margin="5" FontSize="18"/>
+            </StackPanel>
+        </Viewbox>
         <ListView x:Name="AirlineListView" Margin="20" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.Row="1">
             <ListView.ItemTemplate>
                 <DataTemplate>

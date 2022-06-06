@@ -9,6 +9,12 @@ namespace AirportDispatcher.ViewModel
 {
     public class UsersViewModel
     {
+        /// <summary>
+        /// Вход в приложение
+        /// </summary>
+        /// <param name="login"> Логин </param>
+        /// <param name="password"> Пароль </param>
+        /// <returns></returns>
         public bool AuthUser(string login, string password)
         {
             if (login!=String.Empty && password !=String.Empty)

@@ -38,19 +38,6 @@ namespace AirportDispatcher.View.Pages
         /// </summary>
         private void RegPassButtonClick(object sender, RoutedEventArgs e)
         {
-            //RegPassengers obj = new RegPassengers();
-            //try
-            //{
-            //    bool res = obj.RegPassenger(NumPassportTextBox.Text, PlaceGiveTextBox.Text, DateGiveDatePicker.DisplayDate, FullNameTextBox.Text, BirthdayDatePicker.DisplayDate);
-            //    if (res==true)
-            //    {
-            //        MessageBox.Show("Вы успешно добавили нового пассажира");
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
             Core db = new Core();
             CheckStringClass check = new CheckStringClass();
             try

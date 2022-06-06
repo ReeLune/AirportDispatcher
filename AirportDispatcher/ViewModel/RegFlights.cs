@@ -14,12 +14,12 @@ namespace AirportDispatcher.ViewModel
         /// <summary>
         /// Регистрация рейса
         /// </summary>
-        /// <param name="airline">Авиалинии</param>
-        /// <param name="airportFrom">Аэропорт вылета</param>
-        /// <param name="airportTo">Аэропорт прилета</param>
-        /// <param name="allPlaces">Всего мест</param>
-        /// <param name="remainPlaces">Оставшиеся места</param>
-        /// <param name="dateTime">Времия вылета</param>
+        /// <param name="airline"> Авиалинии </param>
+        /// <param name="airportFrom"> Аэропорт вылета </param>
+        /// <param name="airportTo"> Аэропорт прилета </param>
+        /// <param name="allPlaces"> Всего мест </param>
+        /// <param name="remainPlaces"> Оставшиеся места </param>
+        /// <param name="dateTime"> Времия вылета </param>
         /// <returns></returns>
         public bool RegFlight(int airline, int airportFrom, int airportTo, string allPlaces, string remainPlaces, DateTime dateTime)
         {
@@ -94,8 +94,9 @@ namespace AirportDispatcher.ViewModel
             return true;
         }
         /// <summary>
-        /// Удаление рейса
+        /// Удаление полёта
         /// </summary>
+        /// <param name="datetime"> Время вылета </param>
         /// <returns>
         /// True
         /// </returns>

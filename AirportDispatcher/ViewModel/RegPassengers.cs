@@ -10,6 +10,17 @@ namespace AirportDispatcher.ViewModel
 {
     public class RegPassengers
     {
+        /// <summary>
+        /// Регистрация пассажира
+        /// </summary>
+        /// <param name="numberPassport"> Номер паспорта </param>
+        /// <param name="placeGiven"> Место выдачи </param>
+        /// <param name="dateGiven"> Дата выдачи </param>
+        /// <param name="fullName"> ФИО </param>
+        /// <param name="birthDay"> Дата рождения </param>
+        /// <returns>
+        /// True
+        /// </returns>
         public bool RegPassenger(string numberPassport, string placeGiven, DateTime dateGiven, string fullName, DateTime birthDay)
         {
             Core db = new Core();
@@ -62,6 +73,13 @@ namespace AirportDispatcher.ViewModel
 
             return true;
         }
+        /// <summary>
+        /// Удаление пассажира
+        /// </summary>
+        /// <param name="numberPassport"> Номер и серия паспорта </param>
+        /// <returns>
+        /// True
+        /// </returns>
         public bool DeletePassenger(string numberPassport)
         {
             Core db = new Core();

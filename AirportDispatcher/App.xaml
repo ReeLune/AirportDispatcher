@@ -16,7 +16,7 @@
         
             <!--Основные цвета-->
             <SolidColorBrush x:Key="DeepBlue" Color="DeepSkyBlue"/>
-            <SolidColorBrush x:Key="DodgerBlue" Color="DodgerBlue" />
+            <SolidColorBrush x:Key="DodgerBlue" Color="#6949D7" />
             <SolidColorBrush x:Key="AzureBlue" Color="#007fff"/>
             
             <!--Стиль для заголовка-->
@@ -41,6 +41,10 @@
             <Style x:Key="ButtonText" TargetType="Button">
                 <Setter Property="FontSize" Value="18"/>
             </Style>
+            
+            <!--Иконка для приложения-->
+            <BitmapImage x:Key="Plane" UriSource="Assets\Images\Plane.png"/> 
+            
             
         </ResourceDictionary>
     </Application.Resources>

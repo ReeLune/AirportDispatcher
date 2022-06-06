@@ -15,10 +15,10 @@ namespace AirportDispatcherLibraryTests
         /// Проверка правильной даты для регистрации рейса
         /// </summary>
         /// <param>
-        /// Сегодняшняя дата + 2 дня + 15 часов + 43 минуты
+        /// Сегодняшняя дата + 2 дня и + 15 часов, и + 43 минуты
         /// </param>
         /// <return>
-        /// true
+        /// True
         /// </return>
         [TestMethod]
         public void DateTimeFlight_CorrectString_True()
@@ -73,10 +73,10 @@ namespace AirportDispatcherLibraryTests
         /// Проверка правильной даты для регистрации рейса
         /// </summary>
         /// <param>
-        /// Сегодняшняя дата
+        /// Сегодняшняя дата + 15 лет
         /// </param>
         /// <return>
-        /// Исключение, так как стоит сегодняшняя дата
+        /// Исключение, так как на такую дату нельзя зарегестрировать рейс
         /// </return>
         [TestMethod]
         public void DateTimeFlight_FutureDate_Exception()

@@ -12,7 +12,7 @@ namespace AirportDispatcherLibraryTests
     public class RegPassengersTests
     {
         /// <summary>
-        /// Проверка метода регистрацию пассажира
+        /// Проверка регистрации пассажира
         /// </summary>
         /// <param>
         /// String.Epmty x3, datetime
@@ -36,7 +36,7 @@ namespace AirportDispatcherLibraryTests
         }
 
         /// <summary>
-        /// Проверка метода регистрацию пассажира
+        /// Проверка регистрации пассажира
         /// </summary>
         /// <param>
         /// string numberPassport = "1234-653123"; string placeGiven = "Город Екатеринбург"; DateTime dateGiven = new DateTime(2020, 12, 19); 
@@ -60,14 +60,14 @@ namespace AirportDispatcherLibraryTests
             Assert.ThrowsException<Exception>(() => obj.RegPassenger(numberPassport, placeGiven, dateGiven, fullName, birthDay));
         }
         /// <summary>
-        /// Проверка метода регистрацию пассажира
+        /// Проверка регистрации пассажира
         /// </summary>
         /// <param>
         /// numberPassport = "7532-613822"; placeGiven = "Город Екатеринбург"; dateGiven = new DateTime(2020, 12, 19, 0, 0, 0); 
         /// fullName = "Иванов Иван Иванович"; /// birthDay = new DateTime(2002, 12, 19, 0, 0, 0);
         /// </param>
         /// <return>
-        /// true
+        /// True
         /// </return>
         [TestMethod]
         public void RegPassengers_CorrectString_True()

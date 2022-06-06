@@ -24,6 +24,7 @@ namespace AirportDispatcher.Pages
         public MainPage()
         {
             InitializeComponent();
+            ;
         }
         /// <summary>
         /// Кнопка навигации на регистрацию рейса
@@ -44,6 +45,7 @@ namespace AirportDispatcher.Pages
         /// </summary>
         private void ViewPassButtonClick(object sender, RoutedEventArgs e)
         {
+            Properties.Settings.Default.NumberFlight = String.Empty;
             this.NavigationService.Navigate(new AllPassengersViewPage());
         }
         /// <summary>

@@ -34,10 +34,10 @@ namespace AirportDispatcherLibraryTests
         /// Проверка корректности паспорта
         /// </summary>
         /// <param>
-        /// String.Empty
+        /// 1234-652153
         /// </param>
         /// <return>
-        /// true
+        /// True
         /// </return>
         [TestMethod]
         public void NumberPassport_Correct_True()
@@ -54,7 +54,7 @@ namespace AirportDispatcherLibraryTests
         /// Проверка корректности паспорта
         /// </summary>
         /// <param>
-        /// String.Empty
+        /// 12З4-652153
         /// </param>
         /// <return>
         /// Исключение, так как некорректный символ
@@ -73,10 +73,10 @@ namespace AirportDispatcherLibraryTests
         /// Проверка корректности паспорта
         /// </summary>
         /// <param>
-        /// String.Empty
+        /// 12345-652153
         /// </param>
         /// <return>
-        /// Исключение, так как некорректный символ
+        /// Исключение, так как неправильная длина серии и номера паспорта
         /// </return>
         [TestMethod]
         public void NumberPassport_WrongLength_Exception()
@@ -92,10 +92,10 @@ namespace AirportDispatcherLibraryTests
         /// Проверка корректности паспорта
         /// </summary>
         /// <param>
-        /// String.Empty
+        /// -1234652153
         /// </param>
         /// <return>
-        /// true
+        /// Исключение, так как дефис стоит не в том месте
         /// </return>
         [TestMethod]
         public void NumberPassport_Incorrect_True()

@@ -45,7 +45,7 @@ namespace AirportDispatcherLibraryTests
         {
             //Accept
             string placeAll = "200";
-            string placeRemain = "100";            
+            string placeRemain = "100";
             //Act
             CheckStringClass obj = new CheckStringClass();
             bool res = obj.FlightNumberPlacesAll(placeAll,placeRemain);
@@ -79,7 +79,7 @@ namespace AirportDispatcherLibraryTests
         /// Ноль
         /// </param>
         /// <return>
-        /// Исключинеие, так как в количествах мест указаны нули
+        /// Исключинеие, так как количество мест равны нули
         /// </return>
         [TestMethod]
         public void FlightNumberPlacesAll_Null_Exception()

@@ -23,7 +23,7 @@ namespace AirportDispatcher.Pages
     /// </summary>
     public partial class RegistrationPassengerPage : Page
     {
-        //Подключение к бд
+        //Подключение к БД
         Core db = new Core();
         public RegistrationPassengerPage()
         {
@@ -34,6 +34,7 @@ namespace AirportDispatcher.Pages
         /// </summary>
         public void WindowLoaded(object sender, RoutedEventArgs e)
         {
+            AirlineListView.Items.Clear();
             AirportDispatcherEntities obj = new AirportDispatcherEntities();
             var query =
                 from Flight in obj.Flight
@@ -69,11 +70,17 @@ namespace AirportDispatcher.Pages
             Button button = sender as Button;
             Flights dFlight = button.DataContext as Flights;
             Flight flinght = db.context.Flight.Where(x => x.NumberFlight == dFlight.NumberFlingt).First();
+            int count = db.context.Ticket.Where(x => x.NumberFlightTicket == flinght.NumberFlight).ToList().Count();
             string message = $"Вы хотите удалить этот рейс?";
             string title = "Удаление рейса";
             MessageBoxResult res = MessageBox.Show(message, title, MessageBoxButton.YesNo);
             if (res == MessageBoxResult.Yes)
             {
+                for (int i = 0; i < count; i++)
+                {
+                    Ticket ticket = db.context.Ticket.Where(x => x.NumberFlightTicket == dFlight.NumberFlingt).First();
+                    db.context.Ticket.Remove(ticket);
+                }
                 db.context.Flight.Remove(flinght);
                 db.context.SaveChanges();
                 if (db.context.SaveChanges() == 0)
@@ -108,7 +115,9 @@ namespace AirportDispatcher.Pages
                 }
             }
         }
-
+        /// <summary>
+        /// Кнопка добавления пассажиров
+        /// </summary>
         private void AddPassengerButtonClick(object sender, RoutedEventArgs e)
         {
             Button flight = sender as Button;
@@ -118,6 +127,9 @@ namespace AirportDispatcher.Pages
             this.NavigationService.Navigate(new AllPassengersViewPage());
         }
 
+        /// <summary>
+        /// Поиск
+        /// </summary>
         private void SearchTextBoxTextChanged(object sender, TextChangedEventArgs e)
         {
             AirlineListView.Items.Clear();
@@ -153,6 +165,9 @@ namespace AirportDispatcher.Pages
             }
         }
 
+        /// <summary>
+        /// Кнопка просмотра пассажиров
+        /// </summary>
         private void ListPassengerButtonClick(object sender, RoutedEventArgs e)
         {
             Button activeButton = sender as Button;
@@ -161,6 +176,10 @@ namespace AirportDispatcher.Pages
             this.NavigationService.Navigate(new AddedPassengersOnFlight());
         }
     }
+
+    /// <summary>
+    /// Таблица для формирования полётов
+    /// </summary>
     public class Flights
     {
         public string NumberFlingt { get; set;}

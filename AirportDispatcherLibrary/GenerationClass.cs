@@ -8,6 +8,14 @@ namespace AirportDispatcherLibrary
 {
     public class GenerationClass
     {
+        /// <summary>
+        /// Генерация номера полёта
+        /// </summary>
+        /// <param name="airline"> Авиалинии </param>
+        /// <param name="count"> Счет </param>
+        /// <returns>
+        /// number — номер полёта
+        /// </returns>
         public string NumberFlightGeneration(string airline, int count)
         {
             string number = airline +"-";
@@ -21,6 +29,12 @@ namespace AirportDispatcherLibrary
 
             return number;
         }
+        /// <summary>
+        /// Генерация билета для полёта
+        /// </summary>
+        /// <returns>
+        /// ticket — билет для полёта
+        /// </returns>
         public string TicketGeneration()
         {
             string ticket = "";

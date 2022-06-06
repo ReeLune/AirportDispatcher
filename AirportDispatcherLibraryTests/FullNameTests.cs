@@ -15,16 +15,16 @@ namespace AirportDispatcherLibraryTests
         /// Проверка корректности ФИО
         /// </summary>
         /// <param>
-        /// Иван Иванов Иванович
+        /// Иванов Иван Иванович
         /// </param>
         /// <return>
-        /// true
+        /// True
         /// </return>
         [TestMethod]
         public void FullNameCheck_RightString_True()
         {
             //Accept
-            string name = "Иван Иванов Иванович";
+            string name = "Иванов Иван Иванович";
             //Act
             CheckStringClass obj = new CheckStringClass();
             bool res = obj.FullNameCheck(name);
@@ -54,7 +54,7 @@ namespace AirportDispatcherLibraryTests
         /// Проверка корректности ФИО
         /// </summary>
         /// <param>
-        ///иван иванов иванович     
+        /// иванов иван иванович
         /// </param>
         /// <return>
         /// Исключение, так как ввод со строчной буквы
@@ -63,7 +63,7 @@ namespace AirportDispatcherLibraryTests
         public void FullNameCheck_LowerString_Exception()
         {
             //Accept
-            string name = "иван иванов иванович";
+            string name = "иванов иван иванович";
             //Act
             CheckStringClass obj = new CheckStringClass();
             //Assert
@@ -73,7 +73,7 @@ namespace AirportDispatcherLibraryTests
         /// Проверка корректности ФИО
         /// </summary>
         /// <param>
-        /// Ивaн
+        /// Иванов Ивaн Иванович
         /// </param>
         /// <return>
         /// Исключение, так как "a" из латинского алфавита
@@ -82,7 +82,7 @@ namespace AirportDispatcherLibraryTests
         public void FullNameCheck_FalseString_Exception()
         {
             //Accept
-            string name = "Ивaн";
+            string name = "Иванов Ивaн Иванович";
             //Act
             CheckStringClass obj = new CheckStringClass();
             //Assert
@@ -92,7 +92,7 @@ namespace AirportDispatcherLibraryTests
         /// Проверка корректности ФИО
         /// </summary>
         /// <param>
-        /// -Иван
+        /// -Иванов Иван Иванович
         /// </param>
         /// <return>
         /// Исключение, так как начинается с дефиса
@@ -101,7 +101,7 @@ namespace AirportDispatcherLibraryTests
         public void FullNameCheck_StartDefis_Exception()
         {
             //Accept
-            string name = "-Иван Иванов Иванович";
+            string name = "-Иванов Иван Иванович";
             //Act
             CheckStringClass obj = new CheckStringClass();
             //Assert
@@ -111,7 +111,7 @@ namespace AirportDispatcherLibraryTests
         /// Проверка корректности ФИО
         /// </summary>
         /// <param>
-        /// -Иван
+        /// Иванов Иван Иванович-
         /// </param>
         /// <return>
         /// Исключение, так как заканчивается дефисом
@@ -120,7 +120,7 @@ namespace AirportDispatcherLibraryTests
         public void FullNameCheck_EndDefis_Exception()
         {
             //Accept
-            string name = "Иван Иванов Иванович-";
+            string name = "Иванов Иван Иванович-";
             //Act
             CheckStringClass obj = new CheckStringClass();
             //Assert

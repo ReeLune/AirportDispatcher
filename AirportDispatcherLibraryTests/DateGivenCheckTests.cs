@@ -15,10 +15,10 @@ namespace AirportDispatcherLibraryTests
         /// Проверка даты выдачи паспорта
         /// </summary>
         /// <param>
-        /// Сегодняшняя дата -2 года -15 дней
+        /// Сегодняшняя дата -2 года и -15 дней
         /// </param>
         /// <return>
-        /// true
+        /// True
         /// </return>
         [TestMethod]
         public void DateGivenCheck_CorrectString_True()

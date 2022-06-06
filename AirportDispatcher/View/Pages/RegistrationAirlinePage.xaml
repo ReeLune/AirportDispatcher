@@ -33,7 +33,7 @@
                         <TextBlock VerticalAlignment="Center" Text="Аэропорт прибытия" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                         <ComboBox VerticalAlignment="Center" x:Name="AirportToComboBox" Style="{StaticResource MaterialDesignOutlinedComboBox}"/>
                     </UniformGrid>
-                    <Button Margin="15 15 15 0" x:Name="RegButton" Click="RegButtonClick" Content="Зарегестрировать рейс" Style="{StaticResource MaterialDesignFlatDarkBgButton}" />
+                    <Button Margin="15 15 15 0" x:Name="RegButton" Click="RegButtonClick" HorizontalAlignment="Center" Content="Зарегестрировать рейс" Style="{StaticResource MaterialDesignFlatDarkBgButton}" />
                 </StackPanel>
         </Border>
     </Grid>

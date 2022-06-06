@@ -109,9 +109,6 @@ namespace AirportDispatcher.Pages
             }
             else
                 MessageBox.Show("Вы не выбрали Авиакомпанию");
-            
-            
-                    
         }
     }
 }

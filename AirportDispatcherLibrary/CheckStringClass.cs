@@ -11,15 +11,11 @@ namespace AirportDispatcherLibrary
         /// <summary>
         /// Проверка мест в самолете
         /// </summary>
-        /// <param name="allPlaces">
-        /// Всего мест в самолете
-        /// </param>
-        /// <param name="remainsPlaces">
-        /// Оставшиеся места в самолете
-        /// </param>
+        /// <param name="allPlaces"> Всего мест в самолете </param>
+        /// <param name="remainsPlaces"> Оставшиеся места в самолете </param>
         /// <returns>
-        /// true если введено верно
-        /// false введено не верно
+        /// True, если введено верно
+        /// False, если введено неверно
         /// </returns>
         public bool FlightNumberPlacesAll(string allPlaces, string remainsPlaces) 
         {
@@ -41,12 +37,10 @@ namespace AirportDispatcherLibrary
         /// <summary>
         /// Проверка выбранной даты
         /// </summary>
-        /// <param name="dateTime">
-        /// Дата рейса
-        /// </param>
+        /// <param name="dateTime"> Дата рейса </param>
         /// <returns>
-        /// True если введено верно
-        /// False введено не верно
+        /// True, если введено верно
+        /// False, если введено неверно
         /// </returns>
         public bool DateTimeFlight(DateTime dateTime)
         {
@@ -61,12 +55,10 @@ namespace AirportDispatcherLibrary
         /// <summary>
         /// Проверка серии и номера пасспорта
         /// </summary>
-        /// <param name="number">
-        /// Серия и номер паспорта
-        /// </param>
+        /// <param name="number"> Серия и номер паспорта </param>
         /// <returns>
-        /// true если введено верно
-        /// false введено не верно
+        /// True, если введено верно
+        /// False, если введено неверно
         /// </returns>
         public bool NumberPassport(string number)
         {
@@ -87,12 +79,10 @@ namespace AirportDispatcherLibrary
         /// <summary>
         /// Проверка дня рождения
         /// </summary>
-        /// <param name="birthday">
-        /// День рождения
-        /// </param>
+        /// <param name="birthday"> День рождения </param>
         /// <returns>
-        /// true если введено верно
-        /// false введено не верно
+        /// True, если введено верно
+        /// False, если введено неверно
         /// </returns>
         public bool BirthdayCheck(DateTime birthday)
         {
@@ -112,12 +102,10 @@ namespace AirportDispatcherLibrary
         /// <summary>
         /// Проверка ФИО
         /// </summary>
-        /// <param name="name">
-        /// Полное ФИО
-        /// </param>
+        /// <param name="name"> Полное ФИО </param>
         /// <returns>
-        /// true если введено верно
-        /// false введено не верно
+        /// True если введено верно
+        /// False, если введено неверно
         /// </returns>
         public bool FullNameCheck(string name)
         {
@@ -147,12 +135,10 @@ namespace AirportDispatcherLibrary
         /// <summary>
         /// Проверка корректности ввода места выдачи паспорта
         /// </summary>
-        /// <param name="placeGiven">
-        /// Место выдачи
-        /// </param>
+        /// <param name="placeGiven"> Место выдачи </param>
         /// <returns>
-        /// true если введено верно
-        /// false введено не верно
+        /// True, если введено верно
+        /// False, если введено неверно
         /// </returns>
         public bool PlaceGivenCheck(string placeGiven)
         {
@@ -182,12 +168,10 @@ namespace AirportDispatcherLibrary
         /// <summary>
         /// Проверка корректности ввода даты выдачи паспорта
         /// </summary>
-        /// <param name="dateGiven">
-        /// Дата выдачи паспорта
-        /// </param>
+        /// <param name="dateGiven"> Дата выдачи паспорта </param>
         /// <returns>
-        /// true если введено верно
-        /// false введено не верно
+        /// True, если введено верно
+        /// False, если введено неверно
         /// </returns>
         public bool DateGivenCheck(DateTime dateGiven)
         {

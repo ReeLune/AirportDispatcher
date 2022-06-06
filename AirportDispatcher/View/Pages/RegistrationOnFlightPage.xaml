@@ -10,7 +10,7 @@
       Title="RegistrationOnFlightPage">
 
     <Grid Background="#d1d3d2">
-        <Border MinWidth="650" Margin="15" Background="White" VerticalAlignment="Center" Padding="15" MaxWidth="1000" CornerRadius="15">
+        <Border Margin="15" MinWidth="650" Background="White" VerticalAlignment="Center" Padding="15" MaxWidth="1000" CornerRadius="15" Height="265" >
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="1"/>
             </Border.Effect>
@@ -29,9 +29,9 @@
                     <TextBlock VerticalAlignment="Center" Text="День рождения" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <DatePicker x:Name="BirthdayDatePicker" Style="{StaticResource MaterialDesignDatePicker}"/>
-                    </StackPanel>
+                    </StackPanel>                    
                 </UniformGrid>
-                <Button Margin="15 15 15 0" x:Name="RegPassButton" Click="RegPassButtonClick"  Content="Добавить пассажира" Style="{StaticResource MaterialDesignFlatDarkBgButton}" />
+                <Button Margin="15 15 15 0" x:Name="RegPassButton" Click="RegPassButtonClick" HorizontalAlignment="Center" Content="Добавить пассажира" Style="{StaticResource MaterialDesignFlatDarkBgButton}" />
             </StackPanel>
         </Border>
     </Grid>

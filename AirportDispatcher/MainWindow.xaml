@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AirportDispatcher"
         mc:Ignorable="d"
+        
         Title="Диспетчер Аэропорта" Height="700" Width="1000" MinWidth="1000" MinHeight="700">
     <Grid Background="#d1d3d2">
         <Grid.RowDefinitions>

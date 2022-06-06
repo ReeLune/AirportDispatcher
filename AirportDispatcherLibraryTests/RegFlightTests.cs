@@ -12,10 +12,11 @@ namespace AirportDispatcherLibraryTests
         public void RegFlight_EmptyString_Exception()
         {
             /// <summary>
-            /// Проверка регистрации авиарейса
+            /// Проверка правильности регистрации рейса
             /// </summary>
             /// <param>
-            /// int airline = 0; int airportFrom = 0; int airportTo = 0; string allPlaces = String.Empty; string remainPlaces = String.Empty; DateTime dateTime = new DateTime();
+            /// int airline = 0; int airportFrom = 0; int airportTo = 0; string allPlaces = String.Empty; 
+            /// string remainPlaces = String.Empty; DateTime dateTime = new DateTime();
             /// </param>
             /// <return>
             /// Исключение, так как пустые строки
@@ -36,10 +37,11 @@ namespace AirportDispatcherLibraryTests
         public void RegFlight_CorrectString_True()
         {
             /// <summary>
-            /// Проверка количества мест в самолет
+            /// Проверка правильности регистрации рейса
             /// </summary>
             /// <param>
-            /// int airline = 1; int airportFrom = 2; int airportTo = 3; string allPlaces = "150"; string remainPlaces = "50"; DateTime dateTime = DateTime.Today.AddDays(2).AddHours(15).AddMinutes(43);
+            /// int airline = 1; int airportFrom = 2; int airportTo = 3; string allPlaces = "150"; 
+            /// string remainPlaces = "50"; DateTime dateTime = DateTime.Today.AddDays(2).AddHours(15).AddMinutes(43);
             /// </param>
             /// <return>
             /// True
@@ -62,7 +64,7 @@ namespace AirportDispatcherLibraryTests
         public void RegFlight_SameAirport_Exception()
         {
             /// <summary>
-            /// Проверка регистрации авиарейса
+            /// Проверка правильности регистрации рейса
             /// </summary>
             /// <param>
             /// int airline = 1; int airportFrom = 1; int airportTo = 1; string allPlaces = String.Empty; string remainPlaces = String.Empty; 
@@ -87,7 +89,7 @@ namespace AirportDispatcherLibraryTests
         public void RegFlight_MissingPart_Exception()
         {
             /// <summary>
-            /// Проверка регистрации авиарейса
+            /// Проверка правильности регистрации рейса
             /// </summary>
             /// <param>
             /// int airline = 1; int airportFrom = 1; int airportTo = 1; string allPlaces = String.Empty; string remainPlaces = String.Empty; 

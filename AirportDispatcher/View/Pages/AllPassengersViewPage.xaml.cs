@@ -57,7 +57,7 @@ namespace AirportDispatcher.View.Pages
         }
 
         /// <summary>
-        /// Кнопка удаления
+        /// Кнопка удаления 
         /// </summary>
         private void DeleteButtonClick(object sender, RoutedEventArgs e)
         {
@@ -65,12 +65,14 @@ namespace AirportDispatcher.View.Pages
             PassengersT dbPassenger = button.DataContext as PassengersT;
             string number = dbPassenger.NumberPassportP;
             Passengers passenger = db.context.Passengers.Where(x => x.NumberPassport == number).First();
+            Ticket ticket = db.context.Ticket.Where(x => x.NumberPassengerPassport == number).First();
             string message = $"Вы хотите удалить этого пассажира?";
             string title = "Удаление пассажира";
             MessageBoxResult res = MessageBox.Show(message, title, MessageBoxButton.YesNo);
             if (res == MessageBoxResult.Yes)
             {
                 db.context.Passengers.Remove(passenger);
+                db.context.Ticket.Remove(ticket);
                 db.context.SaveChanges();
 
                 if (db.context.SaveChanges()==0)
@@ -143,18 +145,20 @@ namespace AirportDispatcher.View.Pages
             Tickets obj = new Tickets();
             try
             {
-                bool res = obj.TicketAdd(Properties.Settings.Default.NumberFlight, number);
-                if (res==true)
-                {
-                    MessageBox.Show("Вы успешно добавили пассажира на рейс");
-                    Properties.Settings.Default.NumberFlight = String.Empty;
-                    this.NavigationService.Navigate(new MainPage());
-                }
+                    bool res = obj.TicketAdd(Properties.Settings.Default.NumberFlight, number);
+                    if (res == true)
+                    {
+                        MessageBox.Show("Вы успешно добавили пассажира на рейс");
+                        Properties.Settings.Default.NumberFlight = String.Empty;
+                        this.NavigationService.Navigate(new MainPage());
+                    }
+                
+               
+                
             }
             catch (Exception ex)
             {
-
-                throw new Exception(ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
     }

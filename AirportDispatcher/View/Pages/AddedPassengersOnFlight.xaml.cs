@@ -28,6 +28,9 @@ namespace AirportDispatcher.View.Pages
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Генерация для ListView
+        /// </summary>
         private void WindowLoaded(object sender, RoutedEventArgs e)
         {
             AirportDispatcherEntities obj = new AirportDispatcherEntities();
@@ -35,7 +38,7 @@ namespace AirportDispatcher.View.Pages
                 from Ticket in obj.Ticket
                 join Passengers in obj.Passengers on Ticket.NumberPassengerPassport equals Passengers.NumberPassport
                 where Ticket.NumberFlightTicket == Properties.Settings.Default.NumberFlight
-                select new {Ticket.NumberBooking, Passengers.NumberPassport, Passengers.FullName };
+                select new {Ticket.NumberBooking, Ticket.NumberFlightTicket, Passengers.NumberPassport, Passengers.FullName };
 
             if (query.Count() != 0)
             {
@@ -43,6 +46,7 @@ namespace AirportDispatcher.View.Pages
                 {
                     TicketCode ticket = new TicketCode() {
                         NumberBooking = item.NumberBooking,
+                        NumberFlightTicket = item.NumberFlightTicket,
                         NumberPassengerPassport = item.NumberPassport,
                         FullName = item.FullName
                     };
@@ -51,6 +55,9 @@ namespace AirportDispatcher.View.Pages
             }
         }
 
+        /// <summary>
+        /// Поиск
+        /// </summary>
         private void SearchTextBoxTextChanged(object sender, TextChangedEventArgs e)
         {
             PassengersListView.Items.Clear();
@@ -59,8 +66,11 @@ namespace AirportDispatcher.View.Pages
             AirportDispatcherEntities obj = new AirportDispatcherEntities();
             var query =
                 from Ticket in obj.Ticket
-                where Ticket.NumberBooking.ToLower().Contains(search) || Ticket.NumberFlightTicket.ToLower().Contains(search) || Ticket.NumberPassengerPassport.ToLower().Contains(search)
-                select new { Ticket.NumberBooking, Ticket.NumberFlightTicket, Ticket.NumberPassengerPassport };
+                join Passengers in obj.Passengers on Ticket.NumberPassengerPassport equals Passengers.NumberPassport
+                where Ticket.NumberFlightTicket == Properties.Settings.Default.NumberFlight
+                where Ticket.NumberBooking.ToLower().Contains(search) || Ticket.NumberFlightTicket.ToLower().Contains(search) || Ticket.NumberPassengerPassport.ToLower().Contains(search) || 
+                Passengers.FullName.ToLower().Contains(search)
+                select new { Ticket.NumberBooking, Ticket.NumberFlightTicket, Ticket.NumberPassengerPassport, Passengers.FullName};
 
             if (query.Count() != 0)
             {
@@ -70,13 +80,16 @@ namespace AirportDispatcher.View.Pages
                     {
                         NumberBooking = item.NumberBooking,
                         NumberFlightTicket = item.NumberFlightTicket,
-                        NumberPassengerPassport = item.NumberPassengerPassport
+                        NumberPassengerPassport = item.NumberPassengerPassport,
+                        FullName = item.FullName
                     };
                     PassengersListView.Items.Add(ticket);
                 }
             }
         }
-
+        /// <summary>
+        /// Кнопка удаления пассажира
+        /// </summary>
         private void DeleteButtonClick(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
@@ -120,6 +133,10 @@ namespace AirportDispatcher.View.Pages
             }
         }
     }
+
+    /// <summary>
+    /// Таблица для формирования билетов
+    /// </summary>
     public class TicketCode
     {
         public string NumberBooking { get; set; }

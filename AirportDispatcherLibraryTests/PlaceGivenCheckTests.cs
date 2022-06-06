@@ -37,7 +37,7 @@ namespace AirportDispatcherLibraryTests
         /// Отделом внутренних дел 'Гольяново' гор. Москва
         /// </param>
         /// <return>
-        /// true
+        /// True
         /// </return>
         [TestMethod]
         public void PlaceGivenCheck_RightString_True()
