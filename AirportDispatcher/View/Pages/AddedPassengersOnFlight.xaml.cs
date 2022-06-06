@@ -113,7 +113,7 @@ namespace AirportDispatcher.View.Pages
                 from Ticket in obj.Ticket
                 join Passengers in obj.Passengers on Ticket.NumberPassengerPassport equals Passengers.NumberPassport
                 where Ticket.NumberFlightTicket == Properties.Settings.Default.NumberFlight
-                select new { Ticket.NumberBooking, Ticket.NumberFlightTicket, Ticket.NumberPassengerPassport, Passengers.FullName};
+                select new { Ticket.NumberBooking, Ticket.NumberFlightTicket, Ticket.NumberPassengerPassport, Passengers.FullName };
 
                     if (query.Count() != 0)
                     {

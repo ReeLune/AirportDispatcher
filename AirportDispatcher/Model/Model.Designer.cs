@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\311-5(student)\Desktop\AirportDispatcher\AirportDispatcher\Model\Model.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\311-17(student)\Documents\курсовой_ИП91\Леунов\AirportDispatcher\AirportDispatcher\Model\Model.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

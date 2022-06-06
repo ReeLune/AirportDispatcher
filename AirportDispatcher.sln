@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportDispatcherLibrary", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportDispatcherLibraryTests", "AirportDispatcherLibraryTests\AirportDispatcherLibraryTests.csproj", "{042E27C2-4513-479E-A15C-D1974429E91E}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupAirportDispatcher", "SetupAirportDispatcher\SetupAirportDispatcher.vdproj", "{931686D8-A909-4E74-B6BF-E46037995739}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,8 @@ Global
 		{042E27C2-4513-479E-A15C-D1974429E91E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{042E27C2-4513-479E-A15C-D1974429E91E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{042E27C2-4513-479E-A15C-D1974429E91E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{931686D8-A909-4E74-B6BF-E46037995739}.Debug|Any CPU.ActiveCfg = Debug
+		{931686D8-A909-4E74-B6BF-E46037995739}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
